@@ -30,3 +30,17 @@ function capitalizeFirstLetter(string) {
 }
 
 console.log(capitalizeFirstLetter("codeup"))
+
+// use indexOf to find where a letter is if line is very long
+
+const capFirstLetter = (str) => {
+    console.log(str);
+    // console.log(str.substring(0, 1)); - just to check as we go
+
+    let firstLetter = str.substring(0, 1);
+    let capitalizedFirstLetter = firstLetter.toUpperCase();
+    let restOfWord = (str.substring(1))
+
+    return capitalizedFirstLetter + restOfWord;
+}
+console.log(capFirstLetter("testString"))
