@@ -22,17 +22,18 @@
  */
 function analyzeColor(input) {
     if (input === "red") {
-        return "Strawberries are red"
+        return "Strawberries are red";
+        console.log(analyzeColor("red"))
     } else if (input === "blue") {
         return ("blue is the color of the sky")
+        console.log(analyzeColor("blue"))
     } else {
         return ("I dont know anything about cyan")
+        console.log(analyzeColor("cyan"))
     }
 }
 
-    console.log(analyzeColor("red"))
-    console.log(analyzeColor("blue"))
-    console.log(analyzeColor("cyan"))
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
