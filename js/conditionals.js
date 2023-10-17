@@ -137,11 +137,11 @@ function analyzeColor(input) {
 const luckyNumber = Math.floor(Math.random() * 6);
 // calculateTotal(3, 100)
 
-let billTotal= prompt("What is your bill total?")
+// let billTotal= prompt("What is your bill total?")
 
 function calculateTotal(luckyNumber, total){
     if(luckyNumber === 0) {
-
+alert("Your lucky number is no discount")
         return "no discount"
     }else if(luckyNumber === 1) {
         return total * 10
@@ -180,3 +180,9 @@ console.log(calculateTotal())
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+const numbers = [1, 2, 3, 4, 5];
+
+const evenNumbers = numbers.filter(function(number) {
+    return number % 2 === 0;
+});
+console.log(evenNumbers); // Output: [2, 4]
