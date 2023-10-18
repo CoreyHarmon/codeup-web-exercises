@@ -9,7 +9,7 @@
 // Do While loop
 // let i = 0;
 // do {
-//     console.log(i);
+//     console.log(i);d
 //     i++
 // } while (i < 10)
 
