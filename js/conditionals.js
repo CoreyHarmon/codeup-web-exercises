@@ -26,7 +26,7 @@
 //     } else if (color === "blue") {
 //         return ("blue is the color of the sky")
 //     } else {
-//         return ("I dont know anything about cyan")
+//         return ("I don't know anything about cyan")
 //     }
 // }
 // console.log(analyzeColor("red"))

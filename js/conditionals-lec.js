@@ -110,5 +110,5 @@ function sayHello(name) {
         return "That is way too long of a name."
     }
 }
-
-console.log(sayHello(name "Lasso"));
+//
+// console.log(sayHello(name "Lasso"));
