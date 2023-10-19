@@ -36,4 +36,4 @@ do{
    }
 
 
-} while (allCones > 0)
+} while (allCones !== 0)
