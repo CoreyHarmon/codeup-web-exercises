@@ -79,13 +79,16 @@
 let num = 100
 
 while(num >= 5) {
-    num  -=5
-    console.log(num);{
+    num  -=5  // decrement by 5
 
-    }
-if{num: % 2 == 0) {
-    return ("Number is even");
+// don't need curly brackets to start "if" statement
+
+if (num % 2 === 0) {
+    console.log(num + " Number is even");
+}else {
+    console.log(num)
 }
 
 }
-}
+
+// need to put increment OUTSIDE of if loop so that it increments or decrements or else it will get stuck at 100 being even
