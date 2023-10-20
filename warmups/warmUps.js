@@ -75,20 +75,35 @@
 // console.log(largestNum(7,8,9))
 
 // Thursday, October 19 warm up
-
-let num = 100
-
-while(num >= 5) {
-    num  -=5  // decrement by 5
-
-// don't need curly brackets to start "if" statement
-
-if (num % 2 === 0) {
-    console.log(num + " Number is even");
-}else {
-    console.log(num)
-}
-
-}
+//
+// let num = 100
+//
+// while(num >= 5) {
+//     num  -=5  // decrement by 5
+//
+// // don't need curly brackets to start "if" statement
+//
+// if (num % 2 === 0) {
+//     console.log(num + " Number is even");
+// }else {
+//     console.log(num)
+// }
+//
+// }
 
 // need to put increment OUTSIDE of if loop so that it increments or decrements or else it will get stuck at 100 being even
+
+// Warmup October 20
+// Create a function that uses a for loop that returns between 1 and 100. Console log your function.
+function isEven () {
+    for (let i = 1; i <= 100; i++) {
+       if(i % 2 === 0) {
+           console.log(i);
+       }
+    }
+}
+
+isEven() // you need ( ) inside or else it will only call the definition of the function, not the answer
+
+
+
