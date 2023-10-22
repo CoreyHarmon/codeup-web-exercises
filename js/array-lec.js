@@ -93,3 +93,150 @@ console.log(add(...randNumArr1))
 
 const randNumArr2 = [72, 5, 90, 11, 43, 22, 100, 21];
 console.log(add(...randNumArr2))
+
+
+// Manipulating Arrays
+
+//adding elements to an array using push (adding to the end of an array), and unshift (adding to the front of an array)
+// You can push or unshift one or more items, separated by commas, onto an array
+
+const daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday"];
+//["Monday", "Tuesday", "Wednesday", "Thursday"]
+//
+// lets add "Sunday to ehe beginning of the week
+daysOfTheWeek.unshift("Sunday");
+
+console.log(daysOfTheWeek)
+// ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+
+// Let's add "Friday" and "Saturday to the end of the week
+daysOfTheWeek.push("Friday", "Saturday");
+
+console.log(daysOfTheWeek);
+// ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+
+
+// removing elements to an array using pop (removing from the end of an array), shift (removing from the front of an array)
+
+const todoList = ["Take out the trash", "clean the car", "Pay the bills"];
+
+console.log("My todo list:")
+console.log(todoList);
+// ["Take out the trash", "clean the car", "Pay the bills"]
+
+console.log("Completing the last item: " + todoList[todoList.length - 1]);
+//
+// let's remove the last item
+const removedItem = todoList.pop();
+
+// log what we did
+console.log("Task complete: " + removedItem);
+//
+console.log(todoList)
+// ["Take out the trash", "clean the car"]
+console.log('Completing the first item: ' + todoList[0]);
+
+// let's remove the first item
+const doneItem = todoList.shift();
+
+// log what we did
+console.log('Task complete: ' + doneItem);
+
+console.log(todoList);
+// ['Clean the car']
+
+
+// Locating Array elements
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'red'];
+
+let index = colors.indexOf('green');
+console.log(index);
+// 3
+
+index = colors.indexOf('red');
+console.log(index);
+// 0
+
+index = colors.lastIndexOf('red');
+console.log(index);
+// 7
+
+
+// Slicing
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+let slice = colors.slice(2, 4); // stops at 4 but doesn't count it
+
+console.log(colors); // colors is unchanged
+// ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+console.log(slice); // ['yellow', 'green']
+
+slice = colors.slice(3);
+console.log(slice); // ['green', 'blue', 'indigo', 'violet']
+
+
+// Reversing
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+console.log(colors);
+// ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+console.log('Reversing the colors array.');
+
+colors.reverse();
+
+console.log(colors);
+// ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
+
+
+// Sorting
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+console.log(colors);
+// ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+console.log('Sorting the colors array.');
+
+colors.sort();
+
+console.log(colors);
+// ['blue', 'green', 'indigo', 'orange', 'red', 'violet', 'yellow']
+
+
+
+let numberSort = [5, 4, 7, 8, 1]
+numberSort.sort().reverse()
+console.log(numberSort)
+
+
+
+// CONVERTING between STRINGS and ARRAYS
+
+// Splitting - turns it into an array
+
+let namesString = "Joe,Bob,Sally";
+
+console.log(namesString);
+// Joe,Bob,Sally
+
+const namesArray = namesString.split(',');
+
+console.log(namesArray);
+
+
+
+// Joining - turns it into a string
+
+const namesArray = ['Joe', 'Bob', 'Sally'];
+
+console.log(namesArray);
+// ['Joe', 'Bob', 'Sally']
+
+let namesString = namesArray.join(','); // DELIMITER - research more on later
+
+console.log(namesString);
+// Joe,Bob,Sally

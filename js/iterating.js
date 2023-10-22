@@ -7,7 +7,7 @@
      * 'names'.
      */
 const names = ["joe", "greg", "sarah", "sue"];
-
+console.log(names)
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
@@ -26,6 +26,12 @@ const names = ["joe", "greg", "sarah", "sue"];
         console.log("The name at index " + i + " is: " + names[i]);
     }
 
+// Two answers or ways to do this
+console.log(names[0])
+console.log(names[1])
+console.log(names[2])
+console.log(names[3])
+
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
@@ -41,7 +47,17 @@ const names = ["joe", "greg", "sarah", "sue"];
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(name => console.log(`One name is: ${name}.`));
+    // way 1 - forEach loop
+    names.forEach(function(name) {
+        console.log(name);
+    })
+    // way 2 - loop with arrow function
+    names.forEach(name => console.log(name));
+
+    // way 3 - forEach loop using of
+    for(let name of names) {
+        console.log(name)
+    }
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -61,6 +77,12 @@ const names = ["joe", "greg", "sarah", "sue"];
         {
         }
     }
+
+    // second way to do this
+function first(arr) {
+        return arr[0];
+}
+
 
 findName(names);
 
