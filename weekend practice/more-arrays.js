@@ -43,3 +43,26 @@ let dynamicResult = createDynamicArray(7);
 console.log(dynamicResult); // Output: [1, 2, 3, 4, 5, 6, 7]
 
 // In this example, createDynamicArray() takes a parameter length and generates an array containing numbers from 1 to length using a loop. When you call createDynamicArray(7), it will return [1, 2, 3, 4, 5, 6, 7].
+
+
+
+// Creating an array of fruits with indexOf
+var fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+
+// Using indexOf to find the index of an element
+var indexBanana = fruits.indexOf("banana"); // indexBanana will be 1
+var indexGrape = fruits.indexOf("grape");   // indexGrape will be -1 since "grape" is not in the array
+
+// Printing the results
+console.log("Index of 'banana': " + indexBanana);
+console.log("Index of 'grape': " + indexGrape);
+
+
+// Creating a string
+var sentence = "This is an example sentence";
+
+// Splitting the string by spaces
+var words = sentence.split(" ");
+
+// Printing the array
+console.log(words);
