@@ -106,4 +106,19 @@ function isEven () {
 isEven() // you need ( ) inside or else it will only call the definition of the function, not the answer
 
 
+// Warmup October 23
+// Create an array of at least 5 of your favorite movies. Create a for each (or a for of loop) to console log all of your movies in alphabetical order
+
+const favoriteMovies = ["Star Wars", "Harry Potter", "Loki", "Avengers", "Ahsoka"]
+favoriteMovies.sort()
+
+favoriteMovies.forEach (movies =>  {
+    console.log(movies)
+})
+
+
+
+
+
+
 
