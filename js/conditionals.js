@@ -20,18 +20,18 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-// function analyzeColor(color) {
-//     if (color === "red") {
-//         return "Strawberries are red";
-//     } else if (color === "blue") {
-//         return ("blue is the color of the sky")
-//     } else {
-//         return ("I don't know anything about cyan")
-//     }
-// }
-// console.log(analyzeColor("red"))
-// console.log(analyzeColor("blue"))
-// console.log(analyzeColor("cyan"))
+function analyzeColor(color) {
+    if (color === "red") {
+        return "Strawberries are red";
+    } else if (color === "blue") {
+        return ("blue is the color of the sky")
+    } else {
+        return ("I don't know anything about cyan")
+    }
+}
+console.log(analyzeColor("red"))
+console.log(analyzeColor("blue"))
+console.log(analyzeColor("cyan"))
 
 
 // Don't change the next two lines!
@@ -39,17 +39,17 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-// const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-// const randomColor = colors[Math.floor(Math.random() * colors.length)];
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
-// console.log(analyzeColor(randomColor))
-// console.log(randomColor)
-// console.log(colors)
+console.log(analyzeColor(randomColor))
+console.log(randomColor)
+console.log(colors)
 
 /**
  * TODO:
@@ -199,6 +199,5 @@ if (wantToEnterNumber) {
     }
 }
 
-// Call the function to start the analysis
-analyzeColor()
+
 
