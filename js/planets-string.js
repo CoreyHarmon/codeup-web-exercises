@@ -31,6 +31,11 @@
 
 
 
+// Bonus
 
-
+//     let planetsString2 = `<ul>
+// <li>${planetsArray.join(`</li>`)}</li>`
+//         <ul>;
+//
+//         console.log(planets.String2)
 

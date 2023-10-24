@@ -116,6 +116,32 @@ favoriteMovies.forEach (movies =>  {
     console.log(movies)
 })
 
+// Warmup October 24
+// Create an array of car objects. Each object should have 3 properties: make, model, and color. Write a for each or for of loop to log each car's make, model, and color
+
+const cars = [
+    {
+        make: "Dodge",
+        model: "Ram",
+        color: "White"
+    },
+    {
+        make: "Chevrolet",
+        model: "Silverado",
+        color: "Red"
+    }
+];
+cars.forEach(car => console.log(`${car.make} ${car.model} ${car.color}`));
+
+// example of a for of loop
+
+// for(let car of cars){
+//     console.log((`Here is an awesome ${car.make} ${car.model} ${car.color}`))
+// }
+
+
+
+
 
 
 
