@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Username and Password and Submit button-->
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="user name or email"> <!--value="kona123" preloads in text box-->
+    <br>
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password"> <!--"password" sets it, so you can't see the letters. "text," you can see the letters inputted-->
+    <br>
+    <br>
+
+    <input type="submit">
+    <button type="submit">Enter</button>
+    <br>
+    <br>
+
+    <label for="check">Check Here </label>
+    <input id="check" name="Newsletter_signup" type="checkbox" checked> if you would like to sign up for the email newsletter.
+    <br>
+    <br>
+
+    <label for="txtarea">How can we do better</label>
+    <br>
+    <textarea name="" id="txtarea" cols="30" rows="10"></textarea>
+    <br>
+    <p>Test Question</p>
+
+    A <input type="Radio" name="quiz_question" value="a"><br> <!--If you want one of these pre-selected, you would add "checked"-->
+    B <input type="Radio" name="quiz_question" value="b"><br>
+    C <input type="Radio" name="quiz_question" value="c"><br>
+    D <input type="Radio" name="quiz_question" value="d"><br>
+    <br>
+
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="medium">Medium Roast</option> <!--"selected attribute, put after the string, automatically selects one of these-->
+        <option value="dark">Dark Roast</option>
+    </select>
+    <br>
+
+    <input type="hidden" name="user_id" value="432">
+
+    
+</form>
+
+</body>
+</html>
+
+<!--Each "Test Question etc. go in separate form tags. This is for note purposes above-->
