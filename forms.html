@@ -19,20 +19,33 @@
         <br>
         Bio
         <br>
-        <textarea name="bio" cols="30" rows="10"></textarea>
+        <label for="bio">Bio</label>
+        <textarea id="bio" cols="30" rows="10"></textarea>
         <br>
         <br>
-        Billboard <input type="radio" name="advertisement"><br>
-        Radio Advertisement <input type="radio" name="advertisement"><br>
-        Internet Advertisement <input type="radio" name="advertisement"><br>
-        Other <input type="radio" name="advertisement"><br>
+        <label for="Billboard"></label>
+        <input id="Billboard" type="radio" name="Billboard">Billboard<br>
+
+        <label for="advertisement"></label>
+        <input id="advertisement" type="radio" name="advertisement">Radio Advertisement<br>
+
+        <label for="Internet"></label>
+        <input id="Internet" type="radio" name="Internet">Internet Advertisement<br>
+
+        <label for="other"></label>
+        <input id="other" type="radio" name="advertisement">Other<br>
         <br>
         <br>
-        What browser are you using? <select name="What browser are you using">
+        <label for="dropdown">What browser are you using?</label>
+        <select id="dropdown" name="dropdown">
             <option value="safari">Safari</option>
             <option value="chrome">Chrome</option>
             <option value="firefox">Firefox</option>
         </select>
+        <br>
+        <br>
+
+        <button type="submit">Submit</button>
 
     </form>
 </body>

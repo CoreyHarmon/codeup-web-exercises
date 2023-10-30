@@ -1,0 +1,45 @@
+/*
+select element by name (element name)
+*/
+
+h1 {
+    color: gold;
+    text-align: center;
+}
+
+#header2 {
+    color: darkblue;
+}
+
+/* Calling the element by the class name */
+.content {
+    background-color: khaki;
+}
+
+h1, .content {
+    font-weight: lighter;
+}
+
+.fancy-header {
+    font-family: cursive;
+}
+
+.extra-large {
+    color: silver;
+}
+
+/*Descendant Selector*/
+#container h1 {
+    color: gold;
+}
+
+/*Direct-child selector*/
+
+#container >p{
+    background: #ABC;
+}
+
+html {
+    background-size: cover;
+    background-position: no-repeat;
+}
