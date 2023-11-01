@@ -140,6 +140,56 @@ cars.forEach(car => console.log(`${car.make} ${car.model} ${car.color}`));
 // }
 
 
+// Warmup November 1, 2023
+// Objective: Create a function that takes in an array and returns an array of the names of people who know JavaScript.
+let developers = [
+    {
+        name: "Jonathan",
+        languages: {
+            frontend: ["HTML", "JavaScript", "CSS"],
+            backend: ["Java"]
+        }
+    },
+    {
+        name: "Bonnie",
+        languages: {
+            frontend: ["JavaScript"],
+            backend: []
+        }
+    },
+    {
+        name: "Raj",
+        languages: {
+            frontend: [],
+            backend: ["C#", "Java", "Python"]
+        }
+    },
+    {
+        name: "Carmen",
+        languages: {
+            frontend: ["JavaScript", "HTML", "CSS", "React"],
+            backend: ["C#", "Java", "Python", "TypeScript"]
+        }
+    },
+]
+
+function knowsJavaScript(developers) {
+    let javascriptDevelopers=[];
+    for(let i= 0; i < developers.length; i++) {
+        if(developers[i].languages.frontend.includes("Javascript")) {
+            javascriptDevelopers.push(developers[i].name);
+        }
+    }
+    return javascriptDevelopers;
+}
+
+console.log(knowsJavaScript(developers))
+
+
+
+
+
+
 
 
 
