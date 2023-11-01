@@ -1,0 +1,88 @@
+body {
+    background-image: url("/images/purple_planet_background.png");
+    background-size: cover;
+    background-position: center;
+    width: 200vw;
+    height: 100%;
+
+    font-family: "Cambria", sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+/*.split-screen {
+    display: flex;
+    height: 100%;
+}
+
+.left {
+    !*background-color: #FFD700; !* Yellow *!*!
+}
+
+.right {
+    background-color: #FF5733; !* Orange *!
+    color: #FFFFFF; !* White *!
+}*/
+
+header {
+    background-color: rgba(102, 51, 153, 0.5);
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+footer {
+    background-color: rgba(102, 51, 153, 0.5);
+    color: white;
+    text-align: center;
+    padding: 1em;
+
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.about, .projects, .contact {
+    margin: 10em;
+    text-align: left;
+    color: white;
+
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border-color: mediumpurple;
+    color: white;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 56px;
+
+}
+
+button:hover {
+    background-color: rgba(102, 51, 153, 0.5); /* Change background color on hover */
+}
+
+
+.contact p {
+    margin: 0;
+}

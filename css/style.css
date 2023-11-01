@@ -2,3 +2,33 @@
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+
+html {
+    background-color: #AABBCC;
+    background-image: url("../images/pic_1.jpeg");
+    background-size: 100%;
+    background-positoin: center;
+    background-repeat: no-repeat;
+    font-family: "arial black";
+}
+
+ol, ul {
+    list-style: square;
+}
+
+table {
+    font-size:25px;
+    padding: 20px;
+    width: 100%;
+
+}
+th, td{
+    border: 2px solid darkgrey;
+    padding: 12px;
+    text-align: center;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
