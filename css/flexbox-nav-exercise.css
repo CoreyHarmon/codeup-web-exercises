@@ -1,0 +1,49 @@
+/* Reset default styles */
+body, ul, li, a {
+    margin-bottom: 5px;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Define font families */
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    text-align: center;
+}
+
+.navbar ul {
+    margin: 10px;
+    padding: 10px;
+    background-color: grey;
+}
+
+.navbar li {
+    display: inline-block;
+    text-align: center;
+    padding: 0.2em 1em;
+}
+
+.navbar a {
+    display: inline-block;
+    color: inherit;
+}
+
+.navbar a:hover {
+    color: blue;
+}
+
+#logo {
+    width: 5%;
+    height: 5%;
+}
