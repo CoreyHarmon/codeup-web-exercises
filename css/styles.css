@@ -13,6 +13,9 @@ body {
     max-width: 530px;
     box-shadow: 0px 0px 104px -40px rgba(0, 0, 0, 0.25);
     z-index: 10;
+    position: relative;
+    top: -1vw;
+
 
 }
 
@@ -79,13 +82,14 @@ button.btn.btn-login {
 
 .footer-bottom-wave {
     position: absolute;
-    bottom: 0;
+    bottom: -2vw;
     width: 100vw;
+
 }
 
 .footer-top-wave {
     position: absolute;
-    bottom: 0;
+    bottom: -2vw;
     width: 100vw;
 }
 
@@ -110,10 +114,29 @@ button.btn.btn-login {
     position: absolute;
     right: 1vw;
 
+
 }
 
 .times-icon {
+    border-radius: 100%;
+    background-color: white;
+    filter: drop-shadow(1px 1px 1px black);
+    padding: 10px;
+    position: absolute;
+    top: -0.5vw;
+    right: -0.5vw;
+
+
 
 }
+button {
+    border: none;
+    background-color: white;
+}
 
+.no-account {
+    position: relative;
+    bottom: 0;
+    margin: auto;
+}
 

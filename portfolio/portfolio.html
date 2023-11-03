@@ -4,56 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
+<header class="sticky-header">
+    <h1>Portfolio: Corey Harmon</h1>
+</header>
+<!--<div class="resume">
+    <h2><a id="resumeButton" href="About Me">
+        <button>Resume</button>
+    </a></h2>
+</div>-->
 <body>
 
-<div class="box">
+<div id="leftNav" class="navigation">
+
+    <ul>
+        <li>
+            <h2><a id="about" href="About Me">
+                <button>About Me</button>
+            </a></h2>
+        </li>
+        <li>
+            <h2><a id="projects" href="projects">
+                <button>Projects</button>
+            </a></h2>
+        </li>
+        <li>
+            <h2><a id="contacts" href="contact">
+                <button>Contact</button>
+            </a></h2>
+        </li>
+    </ul>
+    <!--<p>You can reach me at: your.email@example.com</p>-->
+
+</div>
+
+<div class="right">
+
+    <a id="aboutme" href="about"></a>
+    <p id="z-about" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, consectetur corporis eos esse est facere
+        impedit incidunt iusto necessitatibus officia perspiciatis praesentium quibusdam quos rem totam vitae
+        voluptatum? Amet, voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis
+        commodi consectetur cumque, debitis delectus dolorem eius error ex excepturi expedita facere incidunt ipsum
+        libero magni optio quaerat ullam vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+        dolores esse est exercitationem expedita, ipsum iste laudantium quae recusandae repudiandae rerum sapiente
+        temporibus vitae. Beatae dolorem eos facere quasi ullam.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque beatae, fuga fugiat illum molestias
+        quibusdam. A earum est fugiat magnam minima, molestiae molestias natus, neque, nulla possimus qui sint?</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi iure minus necessitatibus nulla rerum
+        tenetur unde voluptatem! Architecto, debitis dolore fugiat minus officiis optio praesentium quos sapiente
+        sit veritatis voluptate?</p>
+</div>
+</div>
+
+<!--<div class="box">
     <h1>Border Animation</h1>
-
-       <!-- <h2><a id="resume" href="resume"><button>Resume</button></a></h2>-->
-
+    &lt;!&ndash; <h2><a id="resume" href="resume"><button>Resume</button></a></h2>&ndash;&gt;
     <span class="border-top" id="animatedElement"></span>
     <span class="border-right"></span>
     <span class="border-bottom"></span>
     <span class="border-left"></span>
-</div>
+</div>-->
 
-<div class="split-screen">
-    <div class="left">
-
-        <section class="about">
-            <h2><a id="aboutme" href="About Me"><button>About Me</button></a></h2>
-            <h2><a id="resumeButton" href="About Me"><button>Resume</button></a></h2>
-
-        </section>
-
-        <section class="projects">
-                <h2><button>Projects</button></h2>
-
-        </section>
-
-        <section class="contact">
-            <h2><button>Contact</button></h2>
-            <!--<p>You can reach me at: your.email@example.com</p>-->
-        </section>
-    </div>
-
-    <div class="right">
-
-        <a id="aboutme" href="about"></a><p>content for ABOUT ME section goes here</p>
-        <p>content for PROJECTS section goes here</p>
-        <p>content for CONTACT section goes here</p>
-    </div>
-</div>
-
-
-<header class="sticky">
-    <h1>Portfolio: Corey Harmon</h1>
-</header>
-
-
-<footer>
+<footer class="sticky-footer" >
     <h2>I build things for the web.</h2>
 </footer>
 </body>
