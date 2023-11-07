@@ -11,32 +11,27 @@ body {
 
 }
 
-
-.centered-text {
-    text-align: center;
+/*Split screens left and right containers*/
+.split-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    color: white;
+    align-items: center;
 }
 
 
-.split-screen {
+.split-right {
     display: flex;
+    flex-direction: column;
+    flex: 1;
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-.left, .right {
-    flex: 1; /* Both sides take up equal space */
-}
-
-.left {
-    color: white;
-}
-
-.right {
-    color: white;
-    text-align: center;
 
 }
+
 
 header {
     background-color: rgba(102, 51, 153, 0.5);
@@ -44,6 +39,7 @@ header {
     text-align: center;
     padding: 1em;
 }
+
 
 footer {
     background-color: rgba(102, 51, 153, 0.5);
@@ -54,25 +50,11 @@ footer {
 
 }
 
-.sticky {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
 .sticky-footer {
     position: fixed;
     width: 100%;
     bottom: 0;
     z-index: 1000;
-}
-
-.about, .projects, .contact {
-    margin: 10em;
-    text-align: left;
-    color: white;
-
 }
 
 button {
@@ -84,7 +66,6 @@ button {
     border-right-style: hidden;
     font-size: 25px;
     font-weight: bold;
-
 
 }
 
