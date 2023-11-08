@@ -1,0 +1,46 @@
+.pizza {
+    height: 346px;
+    background-size: cover;
+    display: flex;
+   /* position: relative;*/
+
+}
+
+.btn, .btn-outline-success {
+    background-color: white; /*go back to this for footer submit*/
+    width: 100%;
+    border-color: #2765e0;
+    color: #2765e0;
+
+}
+
+.jumbotron {
+
+}
+
+.opacity-title {
+    background-color: rgba(255, 255, 255, .6);
+    /*opacity: 60%;*/
+    z-index: 1000;
+    /*position: absolute;*/
+    top: -6em;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the element */
+    width: 150%;
+    text-align: center;
+    position: relative;
+
+}
+
+#tossed-card {
+    margin-bottom: 1em;
+}
+
+.next-step {
+    background-color: blue;
+    color: white;
+    display: flex;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 1em;
+}
