@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="main-header">I like purple</h1>
+
+<ul>
+    <li data-purp="1">You like purple</li>
+    <li data-purp="2">Your pet likes purple</li>
+    <li data-purp="3">Codeup likes purple more than green</li>
+</ul>
+
+<p class="paragraph-purple">
+    If you don't like purple, you are wierd.
+</p>
+
+<h2>Below are colors most people like, ranked 1-10</h2>
+<ol>
+    <li data-purp="1">Purple</li>
+    <li data-purp="2">Purple</li>
+    <li data-purp="3">Purple</li>
+    <li data-purp="4">Purple</li>
+    <li data-purp="5">Purple</li>
+    <li data-purp="6">Purple</li>
+    <li data-purp="7">Purple</li>
+    <li data-purp="8">Purple</li>
+    <li data-purp="9">Purple</li>
+    <li data-purp="10">Purple</li>
+</ol>
+<script>
+    const mainHeader = document.getElementById("main-header");
+    mainHeader.style.color = "purple"
+
+    const listItems = document.getElementsByTagName("li");
+
+    for (let i = 0; i < listItems.length; i++) {
+        if (i % 2 !== 1) {
+            listItems[i].style.color = "purple"
+        } else (listItems[i].style.color = "gold")
+    }
+
+    listItems[1].style.color = "red";
+    listItems[3].style.color = "red";
+    listItems[9].style.color = "red";
+</script>
+
+</body>
+</html>
+
+
