@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    console.log(window.innerWidth) /*"window" is globally scoped, don't HAVE to use it*/
+    console.log(window.innerHeight)
+
+    window.confirm("Would you like to continue?") /* or, .confirm would work*/
+    // alert
+    // prompt
+
+
+
+
+
+    // this code will produce a console log every second
+    // when count >= max, the interval is cancelled, and the logging will stop
+
+    let count = 0;
+    let max = 10;
+    let interval = 1000; // interval time in milliseconds - every 1 second
+
+    const intervalId = setInterval( () => {
+        if (count >= max) {
+            clearInterval(intervalId);
+            console.log('All done');
+        } else {
+            count++;
+            console.log('Repeating this line ' + count);
+        }
+    }, interval);
+
+</script>
+
+</body>
+</html>
