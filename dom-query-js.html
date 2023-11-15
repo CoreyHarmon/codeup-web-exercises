@@ -107,20 +107,19 @@
 
     // Mouse Events Exercise - comment out above code to make sense
 
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
         // Get the h1 element by its ID
         let mainHeader = document.getElementById('main-header');
 
         // Add a click event listener
-        mainHeader.addEventListener('click', function () {
+        mainHeader.addEventListener('click', () => {
             // Change the background color to a new color (you can set any color you prefer)
             mainHeader.style.backgroundColor = 'purple';
         });
         let paragraphs = document.querySelectorAll('p');
-
         // Add dblclick event listener to each paragraph
         paragraphs.forEach(function (paragraph) {
-            paragraph.addEventListener('dblclick', function () {
+            paragraph.addEventListener('dblclick', () => {
                 // Change the font size to 18px when double-clicked
                 paragraph.style.fontSize = '18px';
 
@@ -128,7 +127,7 @@
                 });
             });
 
-     const hoverLI = document.querySelector("li");
+     const hoverLI = document.querySelectorAll("li");
 
      for (let i = 0; i < hoverLI.length; i++){
          hoverLI[i].addEventListener("mouseenter", () => {
