@@ -37,3 +37,12 @@
 #toggle-btn:hover {
     background-color: #0056b3;
 }
+
+.new-description-class {
+    color: rebeccapurple;
+    font-family: "Arial", sans-serif;
+}
+
+.alternate-background {
+    background-color: #cdbff3;
+}
