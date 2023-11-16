@@ -1,18 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: mediumpurple;
+            color: white;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Konami Code Game</title>
+</head>
+<body>
+
+<div class="message">Enter the Konami Code to win!</div>
+
+<script>
+    "use strict";
+
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+    let konamiCodeIndex = 0;
+
+    document.addEventListener("keydown", checkKonamiCode);
+
+    function checkKonamiCode(event) {
+        if (event.key === konamiCode[konamiCodeIndex]) {
+            konamiCodeIndex++;
+
+            if (konamiCodeIndex === konamiCode.length) {
+                // Player successfully entered the Konami Code
+                displayWinMessage();
+            }
+        } else {
+            konamiCodeIndex = 0; // Reset if the entered key is incorrect
+        }
+    }
+
+    function displayWinMessage() {
+        document.removeEventListener("keydown", checkKonamiCode);
+        const messageElement = document.querySelector('.message');
+        messageElement.textContent = "Congratulations! You've won the Konami Code game!";
+    }
+</script>
+
+</body>
+</html>
+
+
+
+<!--// Simple way of doing it-->
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Konami Code</title>
 </head>
 <body>
 <h1>Konami Code</h1>
-
+<p>Do you know the Konami Code?</p>
+<p>Enter Konami Code now for 30 extra lives:</p>
 <script>
     "use strict";
 
-    document.addEventListener("keyup", event => console.log(event.key) );
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    let userInput = 0;
 
+    document.addEventListener("keyup", event => {
+        if (konamiCode[userInput] !== event.key) {
+            userInput = 0;
+            alert("Wrong! Try again!")
+        } else {
+            userInput++;
+        }
+        if (userInput === 11) {
+            alert("You get 30 lives!");
+            userInput = 0;
+        }
+    });
 </script>
 </body>
-</html>
-
-
+</html>-->
