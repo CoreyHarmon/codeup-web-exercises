@@ -1,5 +1,5 @@
 document.getElementById('resumeButton').addEventListener('click', function() {
-    var animatedElement = document.getElementById('animatedElement');
+    let animatedElement = document.getElementById('animatedElement');
 
     // Add a class to trigger the animation
     animatedElement.classList.add('animate-border-top');
