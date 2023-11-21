@@ -11,7 +11,7 @@ body, html {
     font-family: 'Lato', sans-serif;
 }
 
-.container {
+/*.container {
     width: 900px;
     height: 150px;
     position: absolute;
@@ -21,7 +21,7 @@ body, html {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
+}*/
 
 .center {
     width: 180px;
@@ -126,47 +126,50 @@ footer {
 /*************************** Media Queries for M screens *******************************/
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width:768px) {
+  /*  .split-top {
+        display: flex;
+        flex-direction: row;
+        !*flex: 1;*!
+        justify-content: space-evenly;
+        color: white;
+        !*   align-items: center;*!
+        width: 50%;
+    }*/
+
+
+    .split-bottom {
+        display: flex;
+        flex-direction: column;
+      /*  justify-content: center;*/
+        color: white;
+        width: 90vw;
+        margin-left: 5%;
+
+    }
+    .container-main {
+        width: 80vw;
+        height: 18%;
+       /* position: absolute;*/
+     /*   left: 60%;*/
+        /*top: 20%;*/
+        /*transform: translate(-50%, -50%);*/
+        display: flex;
+        justify-content: space-evenly;
+        align-content: center;
+        flex-direction: row;
+     /*   flex-direction: row;*/
+        padding-left: 5%;
+
+    }
+
+
 
 }
+
 
 
 /*************************** Media Queries for L screens *******************************/
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width:992px) {
     /*Split screens left and right containers*/
-    .split-top {
-        display: flex;
-        flex-direction: row;
-        /*flex: 1;*/
-        justify-content: space-evenly;
-        color: white;
-     /*   align-items: center;*/
-        width: 50%;
-    }
-
-
-    .split-bottom {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        width: 50%;
-
-    }
-    .container {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-/*    #about-btn #projects-btn #contact-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 20px;
-    }*/
-
-
 }
