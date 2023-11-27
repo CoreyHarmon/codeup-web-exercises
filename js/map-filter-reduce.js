@@ -37,24 +37,19 @@ const users = [
 ];
 
 
-/*Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
-    Use .map to create an array of strings where each element is a user's email address
-Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-    Use .reduce to get the longest email from the list of users.
-    Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.*/
 
 // Answers below
-// 2.
+// 2. Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
 const usersWithThreeOrMoreLanguages = users.filter(user => user.languages.length >= 3);
 
 console.log(usersWithThreeOrMoreLanguages);
 
-// 3.
+// 3. Use .map to create an array of strings where each element is a user's email address
 const userEmails = users.map(user => user.email);
 
 console.log(userEmails);
 
-// 4.
+// 4. Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 const experienceStats = users.reduce(function (accumulator, user) {
     return {
         totalYears: accumulator.totalYears + user.yearsOfExperience,
@@ -68,7 +63,7 @@ console.log("Total Years of Experience:", experienceStats.totalYears);
 console.log("Average Years of Experience:", averageYearsOfExperience);
 
 
-// 5.
+// 5. Use .reduce to get the longest email from the list of users.
 const longestEmail = users.reduce((longest, user) => {
     return user.email.length > longest.length ? user.email : longest;
 }, "");
@@ -76,10 +71,10 @@ const longestEmail = users.reduce((longest, user) => {
 console.log("Longest Email:", longestEmail);
 
 
-// 6.
+// 6. Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 const userListString = users.reduce((userNamesString, user, index, array) => {
     userNamesString += user.name;
-    if (index < array.length) {
+    if (index < array.length - 1) {
         userNamesString += ', ';
     }
     return userNamesString;

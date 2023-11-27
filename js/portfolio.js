@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let projectsParagraph = document.getElementById('z-projects');
     let contactParagraph = document.getElementById('z-contact');
 
+    // Initial setup: hide all paragraphs
+    aboutParagraph.classList.add("hidden");
+    projectsParagraph.classList.add("hidden");
+    contactParagraph.classList.add("hidden");
+
     aboutButton.addEventListener('click', function () {
         toggleVisibility(aboutParagraph);
         hideOthers([projectsParagraph, contactParagraph]);
