@@ -3,8 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="warmUps.css"></script>
 </head>
 <body>
+<div class="container">
+    <header class="text-center my-4">
+        <h1>To-Do List</h1>
+    </header>
+    <main class="row">
+        <section class="border border-lg-none p-4 col-lg-4">
+            <form id="to-do-form">
+                <h3><label class="form-label" for="to-do">Enter to-do:</label></h3>
+                <input class="form-control" type="text" name="to-do" id="to-do">
+                <div class="d-grid">
+                    <button class="btn btn-secondary mt-3 add">Add To-Do</button>
+                </div>
+            </form>
+        </section>
+        <section class="my-4 my-lg-0 col-lg-8">
+            <h3>To-Dos:</h3>
+            <ul class="list-group" id="to-do-list">
+
+            </ul>
+        </section>
+    </main>
+</div>
+<div class="warmup">
     <h1>Warm Ups</h1>
     <p>I feel like I would like to work on making websites or apps look aesthetically appealing, kind of like web design. I am open to other options as I am very ready to learn and develop my skills to be a true full stack web dev. It would be ideal to work from home, but being my first job in the tech field, it may be beneficial to be in a hybrid style job. I would like a minimum of $70,000 so I can be closer to what I'm used to.
 
@@ -21,5 +47,50 @@
             <li>2. May, have a new job in web design - 7 months</li>
             <li>3. Start applying to jobs in January</li>
         </ul>
+</div>
+<!--Javascript for To-Do function-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to add a new to-do
+            function addTodo() {
+                let todoText = document.getElementById('to-do').value.trim();
+                let todoList = document.getElementById('to-do-list');
+                // Check if there are already 10 to-dos
+                if (todoList.children.length >= 10) {
+                    alert("You have reached the maximum limit of 10 to-dos. Complete one or more to-dos before adding new ones.");
+                    return;
+                }
+                if (todoText !== "") {
+                    let listItem = document.createElement('li');
+                    listItem.className = 'list-group-item';
+                    listItem.appendChild(document.createTextNode(todoText));
+
+                    document.getElementById('to-do-list').appendChild(listItem);
+                    document.getElementById('to-do').value = ""; // Clear the input field after adding a to-do
+                } else {
+                    alert("To-Do's text cannot be blank!");
+                }
+            }
+
+            // Event listener for the add button
+            document.querySelector('.add').addEventListener('click', function (e) {
+                e.preventDefault();
+                addTodo();
+            });
+
+            // Event listener for the Enter key in the text input
+            document.getElementById('to-do').addEventListener('keypress', function (e) {
+                if (e.which === 13) { // 13 is the Enter key code
+                    e.preventDefault();
+                    addTodo();
+                }
+            });
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </body>
 </html>
