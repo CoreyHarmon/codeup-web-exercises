@@ -1,3 +1,4 @@
+"use strict"
 // Corey Harmon
 // Daily Warm-ups
 // let name = "corey harmon"
@@ -226,6 +227,55 @@ function findProperties(arrOfElements, bgColor, textColor) {
 }
 
 console.log(findProperties(elements, "purple", "gold"))
+
+
+
+
+
+// <!--Javascript for To-Do function-->
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to add a new to-do
+    function addTodo() {
+        let todoText = document.getElementById('to-do').value.trim();
+        let todoList = document.getElementById('to-do-list');
+        // Check if there are already 10 to-dos
+        if (todoList.children.length >= 10) {
+            alert("You have reached the maximum limit of 10 to-dos. Complete one or more to-dos before adding new ones.");
+            return;
+        }
+        if (todoText !== "") {
+            let listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            listItem.appendChild(document.createTextNode(todoText));
+
+            document.getElementById('to-do-list').appendChild(listItem);
+            document.getElementById('to-do').value = ""; // Clear the input field after adding a to-do
+        } else {
+            alert("To-Do's text cannot be blank!");
+        }
+    }
+
+    // Event listener for the add button
+    document.querySelector('.add').addEventListener('click', function (e) {
+        e.preventDefault();
+        addTodo();
+    });
+
+    // Event listener for the Enter key in the text input
+    document.getElementById('to-do').addEventListener('keypress', function (e) {
+        if (e.which === 13) { // 13 is the Enter key code
+            e.preventDefault();
+            addTodo();
+        }
+    });
+});
+
+// warmup - Use the Pokemon API to add an img of your favorite pokemon to your warmup.html
+const imageTag = document.querySelector("#snorlax")
+fetch("https://pokeapi.co/api/v2/pokemon/snorlax")
+    .then(response => response.json())
+    .then(data => imageTag.src = data.sprites.front_default)
+    .catch(error => console.log("Error" + error))
 
 
 
