@@ -9,4 +9,5 @@ function findLastCommit (name) {
         .catch(error => console.log("Error" + error))
 }
 
-findLastCommit("xJohnnyMartinezx") // type in any user-name to fill in above url
+findLastCommit("coreyharmon") // type in any user-name to fill in above url
+
