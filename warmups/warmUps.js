@@ -280,6 +280,26 @@ fetch("https://pokeapi.co/api/v2/pokemon/snorlax")
 
 
 
+// warmup - November 29 - fetching toDo.json info into HTML
+
+fetch("../data/toDo.json")
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(toDoPost => {
+            const insertToDiv = document.createElement("div");
+            const mainDiv = document.querySelector(".toDo")
+            insertToDiv.innerHTML =
+                `<h2>${toDoPost.title}</h2>
+                <p>${toDoPost.content}</p>
+                <p>${toDoPost.categories}</p>`
+
+           mainDiv.appendChild(insertToDiv)
+        })
+    })
+
+
+
+
 
 
 

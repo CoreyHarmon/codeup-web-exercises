@@ -8,27 +8,44 @@
 <div id="posts"></div>
 
 <script>
-    // Function to fetch and display blog posts
-    function fetchBlogPosts() {
-        // Replace 'blog.json' with the actual path to your JSON file
-        fetch('data/blog.json')
-            .then(response => response.json())
-            .then(data => {
-                // Reference to the posts div
-                let postsDiv = document.getElementById("posts");
+    const postDiv = document.querySelector("#posts");
 
-                // Loop through the blog posts and create HTML elements for each
-                data.forEach(function(post) {
-                    let postDiv = document.createElement("div");
-                    postDiv.innerHTML = "<h2>" + post.title + "</h2><p>" + post.content + "</p><p><strong>Categories:</strong> " + post.categories.join(", ") + "</p><p><strong>Date:</strong> " + post.date + "</p>";
-                    postsDiv.appendChild(postDiv);
-                });
+    fetch("data/blog.json")
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(blogPost => {
+                const postDiv = document.createElement("div");
+                postDiv.innerHTML = `
+                <h2>${blogPost.title}</h2>
+                <p>${blogPost.content}</p>
+                 <p>${blogPost.date}</p>`
+
+                postDiv.appendChild(postDiv)
             })
-            .catch(error => console.error('Error fetching blog posts:', error));
-    }
+        })
 
-    // Call the function to fetch and display blog posts
-    fetchBlogPosts();
+
+    // Function to fetch and display blog posts
+    // function fetchBlogPosts() {
+    //     // Replace 'blog.json' with the actual path to your JSON file
+    //     fetch('data/blog.json')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             // Reference to the posts div
+    //             let postsDiv = document.getElementById("posts");
+    //
+    //             // Loop through the blog posts and create HTML elements for each
+    //             data.forEach(function(post) {
+    //                 let postDiv = document.createElement("div");
+    //                 postDiv.innerHTML = "<h2>" + post.title + "</h2><p>" + post.content + "</p><p><strong>Categories:</strong> " + post.categories.join(", ") + "</p><p><strong>Date:</strong> " + post.date + "</p>";
+    //                 postsDiv.appendChild(postDiv);
+    //             });
+    //         })
+    //         .catch(error => console.error('Error fetching blog posts:', error));
+    // }
+    //
+    // // Call the function to fetch and display blog posts
+    // fetchBlogPosts();
 </script>
 
 </body>
