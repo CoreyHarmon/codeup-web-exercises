@@ -5,8 +5,6 @@
     <title>Map Marker Example</title>
     <!-- Mapbox CSS -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
-    <!-- Custom CSS -->
-
     <!--Mapbox Geocoder Utils-->
     <script src="js/keys.js"></script>
     <script src="js/mapbox-geocoder-utils.js"></script>
@@ -20,7 +18,7 @@
 </head>
 <body>
 
-<h1>My Favorite Restaurant in Dallas, TX</h1>
+<h1>My 3 Favorite Restaurants in Dallas, TX</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
@@ -44,16 +42,53 @@
         zoom: 10,
         center: [-96.7970, 32.7767]
     });
-/*
-    const alamoInfo = {
-        address: "The Alamo, San Antonio",
-        popupHTML: "<p>Come try our ribs!</p>"
-    };*/
 
-  /*  Oak'd bbq: -96.76863197472666, 32.85616710706724*/
+    // Location of Oak'd BBQ - Marker
+    const marker = new mapboxgl.Marker()
+        .setLngLat([-96.76863197472666, 32.85616710706724])
+        .addTo(map);
+
+    // Pop-up with name of Restaurant
+    const codeupPopup = new mapboxgl.Popup()
+        .setHTML("<p>Oak'd BBQ</p>");
+
+    // Pops up when clicked
+    marker.setPopup(codeupPopup);
+
+
+    <!--number 8, create an array, and use a forEach-->
+    const restaurants = [
+        {
+            name: "Oak'd BBQ",
+            coordinates: [-96.76863197472666, 32.85616710706724],
+            description: "Delicious BBQ in Dallas, TX"
+        },
+        {
+            name: "BJ's Restaurant & Brewhouse",
+            coordinates: [-96.8263108568239, 32.96039931854623],
+            description: "Authentic Italian pizza in Dallas, TX"
+        },
+        {
+            name: "Blue Fish",
+            coordinates: [-96.773192939669, 32.85096197505924],
+            description: "Fresh and tasty sushi in Dallas, TX"
+        }
+    ];
+
+    restaurants.forEach(restaurant => {
+        const marker = new mapboxgl.Marker()
+            .setLngLat(restaurant.coordinates)
+            .addTo(map);
+
+        const popup = new mapboxgl.Popup()
+            .setHTML(`<p>${restaurant.name}</p><p>${restaurant.description}</p>`);
+
+        marker.setPopup(popup);
+    });
+
+
 </script>
 </body>
 </html>
 
-<!--
-number 8, create an array, and use a forEach-->
+
