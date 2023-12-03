@@ -20,11 +20,10 @@ function geocode(search, token) {
     let endPoint = '/geocoding/v5/mapbox.places/';
     // fetch request that takes in a url endpoint that will return the long/lat
     return fetch(`${baseUrl}${endPoint}${encodeURIComponent(search)}.json?access_token=${token}`)
-        .then( res => res.json() )
+        .then(res => res.json())
         // to get all the data from the request, comment out the following three lines...
-        .then( data => data.features[0].center);
+        .then(data => data.features[0].center);
 }
-
 
 
 /***
@@ -44,17 +43,16 @@ function reverseGeocode(coordinates, token) {
     let baseUrl = 'https://api.mapbox.com';
     let endPoint = '/geocoding/v5/mapbox.places/';
     return fetch(`${baseUrl}${endPoint}${coordinates.lng},${coordinates.lat}.json?access_token=${token}`)
-        .then( res => res.json() )
+        .then(res => res.json())
         // to get all the data from the request, comment out the following three lines...
-        .then( data => data.features[0].place_name );
+        .then(data => data.features[0].place_name);
 }
-
 
 
 // MapBox info
 const ACCESS_TOKEN = MAPBOX_API;
 
- mapboxgl.accessToken = ACCESS_TOKEN;
+mapboxgl.accessToken = ACCESS_TOKEN;
 
 const map = new mapboxgl.Map({
     container: 'map',
@@ -76,38 +74,8 @@ const codeupPopup = new mapboxgl.Popup()
 marker.setPopup(codeupPopup);
 
 
-<!--number 8, create an array, and use a forEach-->
-const restaurants = [
-    {
-        name: "Oak'd BBQ",
-        coordinates: [-96.76863197472666, 32.85616710706724],
-        description: "Delicious BBQ in Dallas, TX"
-    },
-    {
-        name: "BJ's Restaurant & Brewhouse",
-        coordinates: [-96.8263108568239, 32.96039931854623],
-        description: "Authentic Italian pizza in Dallas, TX"
-    },
-    {
-        name: "Blue Fish",
-        coordinates: [-96.773192939669, 32.85096197505924],
-        description: "Fresh and tasty sushi in Dallas, TX"
-    }
-];
-
-restaurants.forEach(restaurant => {
-    const marker = new mapboxgl.Marker()
-        .setLngLat(restaurant.coordinates)
-        .addTo(map);
-
-    const popup = new mapboxgl.Popup()
-        .setHTML(`<p>${restaurant.name}</p><p>${restaurant.description}</p>`);
-
-    marker.setPopup(popup);
-});
-
 // Search Functionality
-document.getElementById("sub").addEventListener("click", function() {
+document.getElementById("sub").addEventListener("click", function () {
     // Grab the value that the user enters below. .value is whatever value they enter the search box
     let currentLocation = geocode(document.getElementById("search").value, MAPBOX_API);
 
@@ -118,30 +86,13 @@ document.getElementById("sub").addEventListener("click", function() {
 })
 
 // Making it show only 5 days in the forecast
-const weatherOutput = document.querySelector("#forecast")
+const weatherOutput = document.querySelector("#forecast");
 
 fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
     'id=4726206' +
-    `&appid=${MAPBOX_API}` + `&units=imperial`)
+    `&appid=${WEATHER_MAP_API}` + `&units=imperial`)
     .then(data => data.json())
     .then(result => {
-        console.log(result)
-
-        // result.list.forEach(weather => {
-        //     const date = new Date(weather.dt * 1000);
-        //     console.log(date.toLocaleDateString());
-        //
-        //     const time = document.createElement("p")
-        //     const temp = document.createElement("p")
-        //
-        //     time.innerText = date;
-        //     temp.innerText = weather.main.temp;
-        //
-        //     weatherOutput.appendChild(time)
-        //     weatherOutput.appendChild(temp)
-        //
-        // })
-
         const day = result.list;
 
         for (let i = 0; i < day.length; i += 8) {
@@ -150,14 +101,48 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
             const date = new Date(weather.dt * 1000);
             console.log(date.toLocaleDateString());
 
-            const time = document.createElement("p")
-            const temp = document.createElement("p")
 
-            time.innerText = date;
-            temp.innerText = weather.main.temp;
 
-            weatherOutput.appendChild(time)
-            weatherOutput.appendChild(temp)
+// JS that pushes info from OpenWeatherMap API into the HTML
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("card", "m-2",);
+            /*cardDiv.style.opacity("60%");*/
+
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+
+            const dateTitle = document.createElement("h6");
+            dateTitle.innerText = date.toLocaleDateString();
+
+          /*  const lineOne = document.createElement("hr")*/
+
+            const weatherTitle = document.createElement("p");
+            weatherTitle.classList.add("card-text");
+            weatherTitle.innerText = `Weather: ${weather.weather[0].description}`;
+
+            const humidityTitle = document.createElement("p");
+            humidityTitle.classList.add("card-text");
+            humidityTitle.innerText = `Humidity: ${weather.main.humidity}%`;
+
+            const windTitle = document.createElement("p");
+            windTitle.classList.add("card-text");
+            windTitle.innerText = `Wind: ${weather.wind.speed} mph`;
+
+            const pressureTitle = document.createElement("p");
+            pressureTitle.classList.add("card-text");
+            pressureTitle.innerText = `Pressure: ${weather.main.pressure} hPa`;
+
+            cardBody.appendChild(dateTitle);
+            cardBody.appendChild(weatherTitle);
+            cardBody.appendChild(humidityTitle);
+            cardBody.appendChild(windTitle);
+            cardBody.appendChild(pressureTitle);
+
+            cardDiv.appendChild(cardBody);
+
+            weatherOutput.appendChild(cardDiv);
         }
 
     })
+
+
