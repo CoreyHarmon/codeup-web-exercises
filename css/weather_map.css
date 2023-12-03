@@ -1,9 +1,4 @@
 
-#map {
-    /* the width and height may be set to any size */
-    width: 100%;
-    height: 700px;
-}
 /*        body {
             background: #c6c6f5;
         }*/
@@ -13,4 +8,14 @@ h1 {
 .card {
     max-width: 220px; /* Set the maximum width of each card */
     margin: 15em; /* Set the margin between each card */
+}
+#forecast {
+    width: 100%;
+}
+#map {
+    width: 100%;
+    height: 500px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
