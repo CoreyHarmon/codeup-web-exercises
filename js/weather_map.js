@@ -95,15 +95,18 @@ function weatherCardData(lng, lat) {
                 console.log(date.toLocaleDateString());
 
 
-
-
-
                 // Creating a card element
                 const cardDiv = document.createElement("div");
                 cardDiv.classList.add("card", "m-2", "rounded", "shadow-sm", "forecast-card");
 
+                // Creating horizontal rule elements
+                const hr1 = document.createElement("hr");
+                const hr2 = document.createElement("hr");
+                const hr3 = document.createElement("hr");
+
+
                 // Set a fixed height for the card
-                cardDiv.style.height = "300px";
+                cardDiv.style.height = "340px";
                 cardDiv.style.width = "500px";
 
                 // Creating light gray section at the top
@@ -126,6 +129,13 @@ function weatherCardData(lng, lat) {
                 tempTitle.classList.add("mb-0");
                 tempTitle.innerText = date.toLocaleDateString();
 
+                // Creating an image element for the weather icon
+                const iconImage = document.createElement("img");
+                iconImage.src = `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`;
+                iconImage.alt = weather.weather[0].description;
+                iconImage.classList.add("weather-icon");
+                iconImage.style.justifyContent = "center";
+
 
                 // Creating card content (weather information)
                 const weatherDescription = document.createElement("p");
@@ -144,13 +154,18 @@ function weatherCardData(lng, lat) {
                 pressureInfo.classList.add("card-text");
                 pressureInfo.innerText = `Pressure: ${weather.main.pressure} hPa`;
 
-
+                // Appending the icon image to the card body
+                cardBody.appendChild(iconImage);
                 // Appending elements to card body
-                cardBody.appendChild(tempTitle);
                 cardBody.appendChild(weatherDescription);
+                cardBody.appendChild(hr1);
                 cardBody.appendChild(humidityInfo);
+                cardBody.appendChild(hr2);
                 cardBody.appendChild(windInfo);
+                cardBody.appendChild(hr3);
                 cardBody.appendChild(pressureInfo);
+
+
 
                 // Appending light gray section to the card
                 cardDiv.appendChild(lightGraySection);
@@ -184,6 +199,8 @@ function addMarker (event) {
      weatherCardData(lng, lat)
     let deleteData = document.getElementById("forecast")
     deleteData.innerHTML = ""
+
+    marker.setLngLat([lng, lat]).addTo(map);
 }
 
 
@@ -196,6 +213,42 @@ function addMarker (event) {
 
 
 weatherCardData(-96.81407447426254, 32.79854912443865)
+
+
+
+
+// Function to make the selected location show on the top right of the screen in ADDRESS form.
+// Add a reference to the paragraph element for the selected location
+const selectedLocationText = document.getElementById("selected-location-text");
+
+// ...
+
+map.on("click", addMarker);
+
+function addMarker(event) {
+    console.log(event);
+    let lat = event.lngLat.lat;
+    let lng = event.lngLat.lng;
+
+    // Use reverse geocoding to get the address based on the clicked coordinates
+    reverseGeocode({ lat: lat, lng: lng }, MAPBOX_API)
+        .then(address => {
+            // Update the paragraph element with the selected location address
+            selectedLocationText.textContent = `Selected location: ${address}`;
+        })
+        .catch(error => {
+            console.error("Reverse geocoding error:", error);
+        });
+
+    weatherCardData(lng, lat);
+
+    let deleteData = document.getElementById("forecast");
+    deleteData.innerHTML = "";
+
+    // Add the marker to the map at the clicked coordinates
+    marker.setLngLat([lng, lat]).addTo(map);
+}
+
 
 
 
