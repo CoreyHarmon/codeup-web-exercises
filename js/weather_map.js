@@ -112,8 +112,9 @@ function weatherCardData(lng, lat) {
                 // Creating light gray section at the top
                 const lightGraySection = document.createElement("div");
                 lightGraySection.classList.add("light-gray-section", "text-center", "p-2", "rounded-top");
-                lightGraySection.style.backgroundColor = "#D3D3D3"
+                lightGraySection.style.backgroundColor = "#bbb5b5"
                 lightGraySection.style.height = "38px"
+
 
                 // Creating a new div for the date inside the lightGraySection
                 const dateDiv = document.createElement("div");
@@ -202,15 +203,6 @@ function addMarker (event) {
 
     marker.setLngLat([lng, lat]).addTo(map);
 }
-
-
-
-// Update the forecast using the clicked coordinates
-//                 updateForecast(clickedCoordinates);
-
-// pops up when clicked
-//                 marker.setMarker(codeupPopup);
-
 
 weatherCardData(-96.81407447426254, 32.79854912443865)
 
