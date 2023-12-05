@@ -7,12 +7,15 @@
 <body>
 
 <!--In greeter.html create a form that asks the user for their name and has enough html structure to display a greeting.-->
-<form action="">What is your name?
-    <button id="rollD20">Roll d20</button>
-    <p id="d20Result"></p>
+<form id="greetingForm">
+    <label for="userName">Enter your name:</label>
+    <input type="text" id="userName" name="userName" required>
+    <input type="submit">
 </form>
 
+<div id="greetingOutput"></div>
+
 <!--important to type, "module"-->
-<script type="module" src="js/greeting-logic.js"></script>
+<script type="module" src="js/greeting-control.js"></script>
 </body>
 </html>

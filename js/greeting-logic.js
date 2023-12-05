@@ -2,8 +2,6 @@
 
 /*In greeting-logic.js, put the following array of greetings and create a function that returns a random greeting. Make sure to export what you need from this file and import the random number function from numberUtils.*/
 
-
-
 import randomNumber from "./number-utils.js"
 
 const greetings =
@@ -30,6 +28,9 @@ const greetings =
         "Pleased to meet you"
     ];
 
-export default greetings;
+export default function returnRandomGreeting () {
+        return greetings[randomNumber(0, greetings.length -1)]
+}
 
-console.log(randomNumber())
+
+// console.log(returnRandomGreeting())

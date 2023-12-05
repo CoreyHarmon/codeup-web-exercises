@@ -14,7 +14,7 @@ function geocode(search, token) {
 
 
 
-// MapBox info
+// ------------------------------------------------------------------------------------------------ MapBox info
 const ACCESS_TOKEN = MAPBOX_API;
 
 mapboxgl.accessToken = ACCESS_TOKEN;
@@ -38,7 +38,7 @@ function reverseGeocode(coordinates, token) {
 }
 
 
-// Search Functionality
+// ------------------------------------------------------------------------------------------------Search Functionality
 document.getElementById("sub").addEventListener("click", function () {
     // Grab the value that the user enters below. .value is whatever value they enter the search box
     let currentLocation = geocode(document.getElementById("search").value, MAPBOX_API);
@@ -53,7 +53,7 @@ document.getElementById("sub").addEventListener("click", function () {
     })
 })
 
-// Making it show only 5 days in the forecast
+//--------------------------------------------------------------------------- Making it show only 5 days in the forecast
 const weatherOutput = document.querySelector("#forecast");
 function weatherCardData(lng, lat) {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}` +
@@ -69,11 +69,11 @@ function weatherCardData(lng, lat) {
                 console.log(date.toLocaleDateString());
 
 
-                // Creating a card element
+                //----------------------------------------------------------------------------- Creating a card element
                 const cardDiv = document.createElement("div");
                 cardDiv.classList.add("card", "m-2", "rounded", "shadow-sm", "forecast-card");
 
-                // Creating horizontal rule elements
+                // -------------------------------------------------------------------Creating horizontal rule elements
                 const hr1 = document.createElement("hr");
                 const hr2 = document.createElement("hr");
                 const hr3 = document.createElement("hr");
@@ -157,7 +157,7 @@ function weatherCardData(lng, lat) {
         });
 }
 
-// Create a new marker at the clicked coordinates
+//---------------------------------------------------------------------- Create a new marker at the clicked coordinates
 const marker = new mapboxgl.Marker(
     {
         draggable: true,
